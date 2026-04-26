@@ -1,0 +1,80 @@
+[
+  {
+    "title": "AI Calendar Productivity App",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A concept project for an AI-powered calendar and productivity assistant that helps users prioritize tasks, organize schedules, and manage deadlines more effectively."
+  },
+  {
+    "title": "Momentum Research Project",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A group research project exploring momentum-based ideas, with a focus on identifying patterns and analyzing how they might be applied in a financial setting."
+  },
+  {
+    "title": "Kaggle Commodities Forecasting",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A forecasting project based on commodity market data, built around time series prediction and feature-based modeling."
+  },
+  {
+    "title": "Finance News RAG",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A retrieval-augmented generation project designed to summarize finance news and major market events from multiple sources."
+  },
+  {
+    "title": "Alzheimer’s Prediction Model",
+    "year": "2024",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A machine learning project focused on predicting Alzheimer’s-related outcomes using cleaned and merged datasets."
+  },
+  {
+    "title": "Sentiment Analysis on Political Tweets",
+    "year": "2022",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A project analyzing sentiment patterns in political tweets using natural language processing techniques."
+  },
+  {
+    "title": "Black-Scholes Error Margin Research Project",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A research-oriented project investigating where Black-Scholes pricing errors widen and how mispricing patterns might be studied quantitatively."
+  },
+  {
+    "title": "League of Legends Win Classification Prediction",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A classification project using League of Legends match data to predict game outcomes based on gameplay and performance features."
+  },
+  {
+    "title": "LPL Hackathon Compliance Project",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A hackathon project focused on checking employee-related financial news and policy compliance using automated workflows."
+  },
+  {
+    "title": "AI Math Olympiad Solver",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A project exploring how AI systems might approach and solve Olympiad-style mathematics problems."
+  },
+  {
+    "title": "Lorem ipsum dolor sit.",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+  },
+  {
+    "title": "Lorem ipsum dolor sit.",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+  },
+  {
+    "title": "Lorem ipsum dolor sit.",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+  }
+]

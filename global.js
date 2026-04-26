@@ -4,14 +4,12 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-// change this to your actual repo name
 const BASE_PATH =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
     ? "/"
     : "/portfolio/";
 
-// pages for auto nav
-let pages = [
+const pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
   { url: "cv.html", title: "Resume" },
@@ -19,7 +17,21 @@ let pages = [
   { url: "https://github.com/alexa45394", title: "GitHub" },
 ];
 
-// create nav automatically
+// nav
+document.body.insertAdjacentHTML(
+  "afterbegin",
+  `
+    <label class="color-scheme">
+      Theme:
+      <select>
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+  `
+);
+
 let nav = document.createElement("nav");
 document.body.prepend(nav);
 
@@ -34,13 +46,11 @@ for (let p of pages) {
   a.href = url;
   a.textContent = p.title;
 
-  // highlight current page
   a.classList.toggle(
     "current",
     a.host === location.host && a.pathname === location.pathname
   );
 
-  // external links open in new tab
   if (a.host !== location.host) {
     a.target = "_blank";
     a.rel = "noopener noreferrer";
@@ -49,21 +59,7 @@ for (let p of pages) {
   nav.append(a);
 }
 
-// add theme switcher
-document.body.insertAdjacentHTML(
-  "afterbegin",
-  `
-  <label class="color-scheme">
-    Theme:
-    <select>
-      <option value="light dark">Automatic</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </label>
-`
-);
-
+// theme
 let select = document.querySelector(".color-scheme select");
 
 function setColorScheme(colorScheme) {
@@ -81,7 +77,7 @@ select.addEventListener("input", function (event) {
   localStorage.colorScheme = colorScheme;
 });
 
-// better contact form
+// better contact form from Lab 3
 let form = document.querySelector("form");
 
 form?.addEventListener("submit", function (event) {
@@ -97,3 +93,44 @@ form?.addEventListener("submit", function (event) {
   let url = `${form.action}?${params.join("&")}`;
   location.href = url;
 });
+
+//lab4 exports
+
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch JSON: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching or parsing JSON data:", error);
+    return [];
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = "h2") {
+  if (!containerElement) return;
+
+  containerElement.innerHTML = "";
+
+  for (let project of projects) {
+    const article = document.createElement("article");
+
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+      ${project.year ? `<p><strong>Year:</strong> ${project.year}</p>` : ""}
+    `;
+
+    containerElement.appendChild(article);
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
