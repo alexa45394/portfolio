@@ -25,10 +25,14 @@ function getSearchFilteredProjects() {
 
 function getVisibleProjects() {
   let filtered = getSearchFilteredProjects();
+  console.log("before year filter:", filtered);
 
   if (selectedIndex !== -1 && currentPieData[selectedIndex]) {
     let selectedYear = currentPieData[selectedIndex].label;
+    console.log("selectedYear:", selectedYear);
+
     filtered = filtered.filter((project) => project.year === selectedYear);
+    console.log("after year filter:", filtered);
   }
 
   return filtered;
@@ -81,18 +85,25 @@ function renderPieChart(projectsGiven) {
       .attr("class", idx === selectedIndex ? "legend-item selected" : "legend-item")
       .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`)
       .on("click", () => {
+        console.log("legend clicked:", idx, d.label);
         selectedIndex = selectedIndex === idx ? -1 : idx;
+        console.log("selectedIndex after click:", selectedIndex);
         applyFilters();
       });
   });
 }
 
 function applyFilters() {
+  console.log("applyFilters running");
+
   let searchFilteredProjects = getSearchFilteredProjects();
+  console.log("searchFilteredProjects:", searchFilteredProjects);
 
   renderPieChart(searchFilteredProjects);
 
   let visibleProjects = getVisibleProjects();
+  console.log("visibleProjects:", visibleProjects);
+
   renderProjects(visibleProjects, projectsContainer, "h2");
   updateProjectsTitle(visibleProjects);
 }
