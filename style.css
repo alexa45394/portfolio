@@ -107,3 +107,79 @@ textarea {
   grid-row: 2;
   margin: 0;
 }
+
+.project-info {
+  display: grid;
+  gap: 0.25em;
+}
+
+.project-year {
+  color: gray;
+  font-family: Baskerville, serif;
+  font-variant-numeric: oldstyle-nums;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+.chart-layout {
+  display: flex;
+  align-items: start;
+  gap: 2em;
+}
+
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid oklch(50% 10% 200 / 40%);
+  list-style: none;
+  margin: 2em 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 0.25em;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 30em;
+  margin-bottom: 2em;
+}
+
+#projects-pie-plot path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+#projects-pie-plot path.selected {
+  fill: var(--color);
+}
+
+.legend-item.selected {
+  --color: oklch(60% 45% 0) !important;
+}
