@@ -198,18 +198,26 @@ textarea {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
   gap: 1em;
   margin-block: 1em 2em;
 }
 
-.stats dt {
-  font-weight: 600;
-  color: color-mix(in oklch, canvastext, canvas 25%);
+.stat {
+  border: 1px solid color-mix(in oklch, canvastext, canvas 80%);
+  border-radius: 0.75em;
+  padding: 1em;
+  background: color-mix(in oklch, canvas, canvastext 2%);
 }
 
-.stats dd {
-  margin: 0;
+.stat dt {
+  font-weight: 600;
+  color: color-mix(in oklch, canvastext, canvas 30%);
+  font-size: 0.9em;
+}
+
+.stat dd {
+  margin: 0.25em 0 0;
   font-size: 1.4em;
   font-weight: 700;
 }
