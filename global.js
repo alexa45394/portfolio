@@ -13,6 +13,7 @@ const pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
   { url: "cv.html", title: "Resume" },
+  { url: "meta/", title: "Meta" },
   { url: "contact/", title: "Contact" },
   { url: "https://github.com/alexa45394", title: "GitHub" },
 ];

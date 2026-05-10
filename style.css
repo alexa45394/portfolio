@@ -187,3 +187,126 @@ textarea {
 .legend-item.selected {
   --color: oklch(60% 45% 0) !important;
 }
+
+
+/* ── LAB 6: META ANALYSIS PAGE ── */
+
+.meta-intro {
+  max-width: 70ch;
+  color: color-mix(in oklch, canvastext, canvas 25%);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+  gap: 1em;
+  margin-block: 1em 2em;
+}
+
+.stats dt {
+  font-weight: 600;
+  color: color-mix(in oklch, canvastext, canvas 25%);
+}
+
+.stats dd {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+#chart {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-block: 1em;
+}
+
+#chart svg {
+  width: 100%;
+  min-width: 720px;
+}
+
+.gridlines line {
+  stroke: color-mix(in oklch, canvastext, canvas 85%);
+  stroke-dasharray: 3 3;
+}
+
+.gridlines path {
+  display: none;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+  stroke: canvastext;
+  stroke-width: 1.5;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25em 0.75em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  color: color-mix(in oklch, canvastext, canvas 35%);
+  font-weight: 600;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  left: 1em;
+  top: 1em;
+  background: color-mix(in oklch, canvas, canvastext 3%);
+  border: 1px solid color-mix(in oklch, canvastext, canvas 80%);
+  border-radius: 0.75em;
+  box-shadow: 0 0.5em 1.5em oklch(0% 0 0 / 20%);
+  padding: 0.75em 1em;
+  z-index: 10;
+  pointer-events: none;
+  max-width: 24em;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: canvastext;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+#selection-count {
+  font-weight: 600;
+  margin-block: 1em;
+}
+
+#language-breakdown {
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+}
+
